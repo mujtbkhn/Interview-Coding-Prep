@@ -28,3 +28,23 @@ var twoSum = function(nums, target) {
     }
 };
 */
+
+//two sum with the values 
+// pairSum 
+// [1,2,3,4,5,6,7]
+// output -> [[1,6], [2,5], [3,4]]
+
+function findPairSum(arr, sum){
+    let pairs = []
+    let map = new Map();
+    
+    for(let i=0; i<arr.length; i++){
+      let target = sum - arr[i]
+      if(map.has(target)){
+        pairs.push([target, arr[i]])
+      }
+      map.set(arr[i], i)
+    }
+    return pairs
+  }
+  console.log(findPairSum([1,2,3,4,5,6,7], 7))
